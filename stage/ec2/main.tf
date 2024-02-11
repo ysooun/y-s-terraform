@@ -93,39 +93,6 @@ resource "aws_security_group" "database_sg" {
 }
 
 
-/* aws cli 다운로드
-sudo apt-get remove awscli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-sudo apt install unzip
-unzip awscliv2.zip
-sudo ./aws/install
-export PATH=/usr/local/bin:$PATH
-source ~/.bashrc
-aws --version
-*/
 
-/* kunectl 다운로드
-curl -LO https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.13/2023-05-11/bin/linux/amd64/kubectl
-chmod +x kubectl
-mkdir -p $HOME/bin && mv ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
-echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
-kubectl version --short --client
-*/
-
-# aws configure --profile admin_user		##admin_user(administratorAccess)
-# aws configure list --profile admin_user
-# aws --profile admin_user eks --region ap-northeast-2 update-kubeconfig --name my-eks --alias my-eks
-# kubectl config get-contexts
-# kubectl config use-context my-eks
-
-/*
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
-*/
-
-
-# aws eks create-addon --cluster-name my-eks --addon-name aws-ebs-csi-driver --service-account-role-arn arn:aws:iam::228306359692:role/ebs-csi-irsa_role
 
 
