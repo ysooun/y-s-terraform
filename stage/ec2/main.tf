@@ -72,11 +72,19 @@ resource "aws_security_group" "database_sg" {
   vpc_id      = data.terraform_remote_state.remote_vpc.outputs.vpc_id
 
   ingress {
-    from_port   = 3306  # 예시로 MySQL 포트를 사용했습니다. 필요에 따라 포트를 수정하세요.
+    from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "MySQL"
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "SSH"
   }
 
   egress {
