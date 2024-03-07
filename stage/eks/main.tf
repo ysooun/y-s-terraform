@@ -25,7 +25,7 @@ provider "aws" {
 module "aws_eks_cluster" {
   source              = "../../module/eks"
   cluster_name        = "my-eks"
-  cluster_version     = "1.28"
+  cluster_version     = "1.29"
   cluster_admin       = data.aws_iam_user.EKS_Admin_ID.user_id
   vpc_id              = data.terraform_remote_state.remote_vpc.outputs.vpc_id
   vpc_private_subnets = data.terraform_remote_state.remote_vpc.outputs.vpc_private_subnets
